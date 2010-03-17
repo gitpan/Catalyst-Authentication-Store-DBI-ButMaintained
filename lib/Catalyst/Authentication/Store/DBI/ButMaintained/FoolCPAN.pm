@@ -4,6 +4,10 @@ use warnings;
 
 die 'This is a search.cpan notice';
 
+package Catalyst::Authentication::Store::DBI::ButMaintained::FoolCPAN;
+
+sub die { die @_ };
+
 1;
 
 =head1 DEPRECATION NOTICE

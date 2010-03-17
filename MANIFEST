@@ -25,4 +25,5 @@ t/95_pod-coverage.t
 t/lib/SetupDB.pm
 t/lib/TestApp.pm
 t/lib/TestApp/Model/DBI.pm
+t/test.db
 TODO
