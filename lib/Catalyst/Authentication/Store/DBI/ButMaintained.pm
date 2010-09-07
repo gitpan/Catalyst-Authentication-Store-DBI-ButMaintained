@@ -7,7 +7,7 @@ use Storable;
 use Moose;
 use MooseX::Types::LoadableClass qw/ClassName/;
 
-our $VERSION = '0.02_03';
+our $VERSION = '0.01';
 
 has 'config' => (
 	isa  => 'HashRef'
@@ -38,7 +38,7 @@ sub find_user {
 	my ($self, $authinfo, $c) = @_;
 	my $dbh = $c->model('DBI')->dbh;
 
-	my @col = map { $_ } sort keys %$authinfo;
+	my @col = sort keys %$authinfo;
 
 	my $abs_user_dest = $self->_safe_escape(
 		$dbh
@@ -198,9 +198,6 @@ use Catalyst qw(Authentication);
 		...
 	}
 
-...
-}
-
 =head1 DESCRIPTION
 
 This module implements the L<Catalyst::Authentication> API using L<Catalyst::Model::DBI>.
@@ -279,9 +276,12 @@ Evan Carroll, E<lt>cpan@evancarroll.comE<gt>
 
 (v.01) Simon Bertrang, E<lt>simon.bertrang@puzzworks.comE<gt>
 
-=head1 COPYRIGHT
+=head1 AUTHOR
 
 Copyright (c) 2010 Evan Carroll, L<http://www.evancarroll.com/>
+
+=head2 Original L<Catalyst::Authentication::Store::DBI>
+
 Copyright (c) 2008 PuzzWorks OHG, L<http://puzzworks.com/>
 
 =head1 LICENSE
